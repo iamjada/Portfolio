@@ -1,0 +1,188 @@
+<!--
+    Author: Jada Senebouttarath
+    305/guestbook/guestbook.html
+    Guestbook Form for Portfolio Project
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/gueststyle.css">
+    <link rel="stylesheet" href="../HTML Resume/styles/portfoliostyles.css">
+    <link rel="stylesheet" href="../guestbook/includes/header.html/">
+
+    <title>Jada's GuestBook!</title>
+
+    <!-- Insert Favicon -->
+    <link href="images/pencil.png" type="image/png" rel="icon">
+</head>
+<header>
+    <div class="topnav">
+        <a href="http://iamjada1.greenriverdev.com/305/Portfolio%20Project/HTML%20Resume/portfolio.html">Resume</a>
+        <a class="active" href="http://iamjada1.greenriverdev.com/305/Portfolio%20Project/guestbook/guestbook.html">Guestbook</a>
+        <a href="http://iamjada1.greenriverdev.com/305/Portfolio%20Project/guestbook/guest-admin.php">Admin</a>
+    </div>
+</header>
+<body>
+<div class="container" id="main">
+    <!-- jumbotron -->
+    <div class="jumbotron bg-transparent">
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">Sign my guestbook!</p>
+    </div><!--div jumbotron -->
+
+    <!--form -->
+    <form action="guest-add.php" method="post" id="guestbook">
+
+        <!-- contact info form -->
+        <fieldset class="form-group border p-2">
+            <legend>Contact Information</legend>
+            <!-- first name -->
+            <div class="form-row">
+                <div class="form-group col-sm">
+                    <label for="fname">First Name:</label>
+                    <input type="text" class="form-control" id="fname"
+                           placeholder="Enter first name" name="fname">
+                    <!-- required first name validation -->
+                    <span class="error" id="error-fname">
+                    Please enter a first name
+                </span>
+                </div>
+                <!-- last name -->
+                <div class="form-group col-sm">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" class="form-control" id="lname"
+                           placeholder="Enter last name" name="lname">
+                    <!-- required last name validation -->
+                    <span class="error" id="error-lname">
+                    Please enter a last name
+                </span>
+                </div>
+            </div> <!--form row -->
+
+            <!-- job title -->
+            <div class="form-row">
+                <div class="form-group col-sm">
+                    <label for="jobtitle">Job Title:(Optional)</label>
+                    <input type="text" class="form-control" id="jobtitle"
+                           placeholder="Enter job title" name="jobtitle">
+                </div>
+
+                <!-- Company -->
+                <div class="form-group col-sm">
+                    <label for="company">Company:(Optional)</label>
+                    <input type="text" class="form-control" id="company"
+                           placeholder="Enter company name" name="company">
+                </div>
+            </div>  <!--form row -->
+
+            <!-- LinkedIn URL -->
+            <div class="form-group">
+                <label for="url">LinkedIn URL:(Optional)</label>
+                <input type="text" class="form-control" id="url"
+                       placeholder="Enter LinkedIn URL" name="url">
+                <!-- required email mailing list validation -->
+                <span class="error" id="error-url">
+                    URL must contain "http" and end with ".com"
+                </span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email"
+                       placeholder="Enter email address" name="email">
+                <!-- email validation -->
+                <span class="error" id="error-email">
+                    Please enter a valid email address
+                </span>
+                <!-- required email mailing list validation -->
+                <span class="error" id="email-list">
+                    *Required
+                </span>
+            </div>
+        </fieldset> <!--fieldset form -->
+
+        <!-- How we met -->
+        <fieldset class="form-group border p-2">
+            <legend>How did we meet?</legend>
+            <div class="form-group col-md-2">
+                <label for="meet">
+                    <select id="meet" class="form-control" name="meet">
+                        <option value="none">Select</option>
+                        <option value="meetup">Meetup</option>
+                        <option value="jobfair">Job Fair</option>
+                        <option value="notyet">We haven't met yet</option>
+                        <option value="other">Other...</option>
+                    </select>
+                </label>
+                <!-- how we met validation -->
+                <span class="error" id="error-met">
+                    Please select an option
+                </span>
+            </div>
+
+            <!-- other textbox -->
+            <div class="form-group">
+                <label for="otherbox">If Other (Please Specify):</label>
+                <textarea class="form-control" maxlength="250" rows="6" id="otherbox"
+                          name="otherbox" placeholder="Please describe here..."></textarea>
+            </div>
+
+        </fieldset> <!-- How we met -->
+
+        <!-- mailing list -->
+        <!-- check box -->
+        <fieldset class="form-group border p-2">
+            <legend>Join my mailing list</legend>
+            <div class="form-check col-sm">
+                <input class="form-check-input" type="checkbox" value="mail-list" name="mail-list" id="mail-list">
+                <label for="mail-list" class="form-check-label">
+                    Please add me to your mailing list!
+                </label>
+
+            </div> <!--div check box -->
+            <p>
+                <!-- email format radio button -->
+            <div class="form-check-label">
+                <label for="emailformat" id="emailformat">
+                    Please choose an email format:
+                </label>
+                <p>
+                    <input type="radio" name="emailformat" value="HTML" checked> HTML
+                    <input type="radio" name="emailformat" value="Text"> Text
+                </p>
+            </div> <!-- radio -->
+            <!-- submit -->
+            <button type="submit" class="btn btn-primary btn-default">Submit
+            </button>
+        </fieldset>
+
+    </form> <!-- form -->
+
+</div> <!--div body -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="guestbook.js"></script>
+
+
+</body>
+
+</html>

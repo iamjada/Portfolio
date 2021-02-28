@@ -1,0 +1,25 @@
+.container_main {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+.container {
+    background-color: white;
+}
+
+
+body {
+
+    background: #cce5ff;
+
+}
+
+
+.error {
+    color: darkred;
+    display: none;
+}
+
+legend {
+    color: #f1b0b7;
+}
